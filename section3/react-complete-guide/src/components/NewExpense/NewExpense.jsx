@@ -19,15 +19,20 @@ function NewExpense({ onAddNewExpense }) {
   };
 
   const cancelHandler = () => {
-    setIsEditing(false)
-  }
+    setIsEditing(false);
+  };
 
   return (
     <div className="new-expense">
       {!isEditing && (
         <button onClick={startEdititngHandler}>Add New Expense</button>
       )}
-      {isEditing && <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} onCancleClick={cancelHandler}/>}
+      {isEditing && (
+        <ExpenseForm
+          onSaveExpenseData={saveExpenseDataHandler}
+          onCancleClick={cancelHandler}
+        />
+      )}
     </div>
   );
 }

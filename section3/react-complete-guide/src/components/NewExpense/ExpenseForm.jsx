@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-function ExpenseForm({onSaveExpenseData, onCancleClick}) {
+function ExpenseForm({ onSaveExpenseData, onCancleClick }) {
   //   const [enteredTitle, setEneredTitle] = useState("");
   //   const [enteredAmount, setEneredAmount] = useState(0);
   //   const [enteredDate, setEnteredDate] = useState("2022-12-31");
@@ -34,7 +34,7 @@ function ExpenseForm({onSaveExpenseData, onCancleClick}) {
 
     const expenseDate = {
       title: userInput.enteredTitle,
-      amount: userInput.enteredAmount,
+      amount: +userInput.enteredAmount,
       date: new Date(userInput.enteredDate),
     };
 
@@ -43,7 +43,7 @@ function ExpenseForm({onSaveExpenseData, onCancleClick}) {
       enteredAmount: "",
       enteredDate: "",
     });
-    onSaveExpenseData(expenseDate)
+    onSaveExpenseData(expenseDate);
   };
 
   return (
@@ -79,7 +79,9 @@ function ExpenseForm({onSaveExpenseData, onCancleClick}) {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="button" onClick={onCancleClick}>Cancel</button>
+        <button type="button" onClick={onCancleClick}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
